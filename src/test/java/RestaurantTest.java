@@ -72,6 +72,8 @@ class RestaurantTest {
     @Test
     public void selecting_items_should_return_the_total_value_of_prices_added(){
         ArrayList<String> itemsSelected = new ArrayList<String>();
+        itemsSelected.add("Sweet corn soup");
+        itemsSelected.add("Vegetable lasagne");
         assertEquals(restaurant.calculateBillTotal(itemsSelected),119+269);
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

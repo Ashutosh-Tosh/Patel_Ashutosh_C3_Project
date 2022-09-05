@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +9,7 @@ public class Restaurant {
     public LocalTime closingTime;
     private List<Item> menu = new ArrayList<Item>();
 
-    private List<Item> itemSelectedFromMenu = new ArrayList<Item>();
+    //private List<Item> itemSelectedFromMenu = new ArrayList<Item>();
 
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         this.name = name;
@@ -59,9 +58,13 @@ public class Restaurant {
     }
 
     public int calculateBillTotal(ArrayList<String> selectedItems){
-        return 0;
+        int totalBill = 0;
+        for(String str: selectedItems){
+           totalBill = totalBill + findItemByName(str).getPrice();
+        }
+        return totalBill;
     }
-    public void displayDetails(){
+   public void displayDetails(){
         System.out.println("Restaurant:"+ name + "\n"
                 +"Location:"+ location + "\n"
                 +"Opening time:"+ openingTime +"\n"
