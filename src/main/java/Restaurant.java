@@ -59,8 +59,10 @@ public class Restaurant {
 
     public int calculateBillTotal(ArrayList<String> selectedItems){
         int totalBill = 0;
+        int totalPrice;
         for(String str: selectedItems){
-           totalBill = totalBill + findItemByName(str).getPrice();
+            totalPrice = findItemByName(str).getPrice();
+            totalBill = totalBill + totalPrice;
         }
         return totalBill;
     }
